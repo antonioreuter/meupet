@@ -43,12 +43,11 @@ gem 'travis', '~> 1.7.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'sqlite3'
-
 group :production do
   gem 'puma', '~> 2.11.3'
   gem 'newrelic_rpm'
   gem 'rails_12factor'
+  gem 'pg', '~> 0.18.2'
 end
 
 group :development, :test do
@@ -65,6 +64,8 @@ group :development, :test do
   gem 'rspec-collection_matchers'
 
   gem 'web-console', '~> 2.0'
+
+  gem 'sqlite3'
 end
 
 group :test do
