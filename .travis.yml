@@ -1,0 +1,31 @@
+language: ruby
+
+rvm:
+- 2.1.5
+
+branches:
+  only:
+  - master
+
+gemfile:
+- Gemfile
+
+notifications:
+  email:
+    - antonioreuter@gmail.com
+    - aandrade@avenuecode.com
+
+addons:
+  code_climate:
+    repo_token: ddffc92f92c80b785c9a195f765f6afdf3ae02f3e6a8259e2643e19f2902d1a6
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: 3svvKiTLkwBZrNXFwqLwkLUhbbsB50QXpZhSBPfgDRk0f/2L4npBG3BPUF2l34FPLni1VxVdXEczFwznZUKwL2EJoUSVCCqRHjZbTQgxaVJqKONMmKKRpJvBSmLXReYEQJZ3dr6J8Nthlcs3nDFepUebjOsRCFLKPTPNP0/Yd53K1AuH81nyMHLViXBb7N7AqapoDDxu4lK+gJpp+0YQmeogtXL9rLPxVvWZTn1a1vqMW1JrXbHP8KA4A+CcQVSauxvSYwn9rUq3H9mFfp83s8mIfVGIi5tgeFgV0PpcpppLix39eub2daQEDPdCO4J/v1fVRVXq4CflV1n6ekUM0jcTNeKtsQVO0wI0L+RvC7A6ZJeJ+GHeXx0crljphQJYWSnGIUfp99mhzyTSMDMpX+rRqZadA9gofJvkl/QhADMs6hVLdsur9syxIMXsCvv0zvnm7Ni61NW6OM8/nLb20WKlRb+e9QM44LIhtwNYIar7ImWlycdCDbaMP5lGuwZnZNLjaUolW7BPV81dmK9rxMq0YHputlSrFonkxBc9evyYzxC21RRYb1SAMldEPw0xmQ+hidc/S4n6ppO5RGqgRKhOE1wTkkcXL52iJw9zTcvJ8OHEeI5IVgJxvFuOlA0XEovHCJtgkZ9ilq3dd3YGruqwS5onASwa3CvN8zz7nnY=
+  app: meupet
+  on:
+    repo: antonioreuter/meupet
+  run:
+    - "rake db:migrate"
+    - restart

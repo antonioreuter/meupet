@@ -1,0 +1,13 @@
+{<img src="https://travis-ci.org/antonioreuter/meupet.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/antonioreuter/meupet]
+
+{<img src="https://codeclimate.com/github/antonioreuter/meupet/badges/gpa.svg" />}[https://codeclimate.com/github/antonioreuter/meupet]
+
+{<img src="https://codeclimate.com/github/antonioreuter/meupet/badges/coverage.svg" />}[https://codeclimate.com/github/antonioreuter/meupet/coverage]
+
+{<img src="https://heroku-deployment-badges.herokuapp.com/?app=meupet" />}[https://heroku-badge.herokuapp.com/?app=heroku-badge]
+
+== Meu Pet
+
+Site para adoção de pets
+
+<tt>rake doc:app</tt>.
