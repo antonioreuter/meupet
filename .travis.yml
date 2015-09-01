@@ -1,7 +1,6 @@
 language: ruby
-
 rvm:
-- 2.1.5
+- 2.2.2
 
 branches:
   only:
@@ -12,8 +11,8 @@ gemfile:
 
 notifications:
   email:
-    - antonioreuter@gmail.com
-    - aandrade@avenuecode.com
+  - antonioreuter@gmail.com
+  - aandrade@avenuecode.com
 
 addons:
   code_climate:
@@ -22,8 +21,8 @@ addons:
 deploy:
   provider: heroku
   api_key:
-    secure: 3svvKiTLkwBZrNXFwqLwkLUhbbsB50QXpZhSBPfgDRk0f/2L4npBG3BPUF2l34FPLni1VxVdXEczFwznZUKwL2EJoUSVCCqRHjZbTQgxaVJqKONMmKKRpJvBSmLXReYEQJZ3dr6J8Nthlcs3nDFepUebjOsRCFLKPTPNP0/Yd53K1AuH81nyMHLViXBb7N7AqapoDDxu4lK+gJpp+0YQmeogtXL9rLPxVvWZTn1a1vqMW1JrXbHP8KA4A+CcQVSauxvSYwn9rUq3H9mFfp83s8mIfVGIi5tgeFgV0PpcpppLix39eub2daQEDPdCO4J/v1fVRVXq4CflV1n6ekUM0jcTNeKtsQVO0wI0L+RvC7A6ZJeJ+GHeXx0crljphQJYWSnGIUfp99mhzyTSMDMpX+rRqZadA9gofJvkl/QhADMs6hVLdsur9syxIMXsCvv0zvnm7Ni61NW6OM8/nLb20WKlRb+e9QM44LIhtwNYIar7ImWlycdCDbaMP5lGuwZnZNLjaUolW7BPV81dmK9rxMq0YHputlSrFonkxBc9evyYzxC21RRYb1SAMldEPw0xmQ+hidc/S4n6ppO5RGqgRKhOE1wTkkcXL52iJw9zTcvJ8OHEeI5IVgJxvFuOlA0XEovHCJtgkZ9ilq3dd3YGruqwS5onASwa3CvN8zz7nnY=
-  app: meupet
+    secure: XyF9ABdyqgwJBgCnXMLjER4ksj9kVvsRvNYP98GFrlI/hqTD+8twsxHyNwpygaJBCGA9epUrrIx1O8EI012jFikBDqcxv5y6XjZwe9QjvjFGvhxUOIQVM7nOqEqV4neBoo5WdgVY1QDH2pgnpEWmaa23vGXpj0pfgS44Xt/Ezv5JQb86wmeThfR7kzXscokBzrNIw4aUSzT+kpmUY5/Nijy9+Bo6OoqNWCyFEZbPDRwNAdRFnEUsaN/xSVc6cDIGAku9zzebj4JKTsCw/X1VT67NR2MLdYBnceDbILGcd1pyLTLzVK1OAXn9Yox0Bncdcnpyd8D75br2Ba46rjL+0towkuAjasNRYtImRzDZ17RIQd3Ih2mE1AygoMsP9Y1ljlIS/zcnsnp59ZlWnsFG6UY80QwepnUE61GUXaED501OvgZlOhAaEJJDVvY0qRXNH2ZlIMi5m4Hx/0Hwv/e106Ju9oTj567HES2FyxmMO1ofO+iLTlAHKehruMiQ75az4SZI99Cgy+kCLVnm9u3usZP0vJmws1N2huV1+9FhwWHCzr4lfMgwh3lIVXwEeoe3PzEPLnyInZyPmS9D4YRgRGWLJmPevK2PFcpyIMMJGpEFsA6Hv2k/fdi9dY1yPZl6bZKSrEFX1NGAjrsgcGUg1L0KPKtB5ibv9yqwwXMmo64=
+  app: omeupet
   on:
     repo: antonioreuter/meupet
   run:
