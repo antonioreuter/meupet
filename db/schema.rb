@@ -13,19 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150521020120) do
 
-  create_table "restaurants", force: :cascade do |t|
-    t.string   "name"
-    t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
-  create_table "reviews", force: :cascade do |t|
-    t.string   "title"
-    t.string   "comment"
-    t.integer  "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
 end
