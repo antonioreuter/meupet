@@ -66,9 +66,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
   gem 'sqlite3'
-end
 
-group :test do
   gem 'factory_girl_rails'
   gem 'shoulda-matchers', require: false
 end
