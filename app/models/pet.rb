@@ -5,4 +5,6 @@ class Pet < ActiveRecord::Base
   has_one :address
   has_one :category
 
+  validates :name, :address, :owner, :category, presence: true
+
 end
