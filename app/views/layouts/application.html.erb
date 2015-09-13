@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html ng-app='meupet' lang='pt-BR'>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Antonio Reuter">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Antonio Reuter">
 
-        <title>Meu Pet</title>
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= csrf_meta_tags %>
-    </head>
-    <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Meu Pet</a>
-            </div>
-            </div>
-        </nav>
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="container">
-            <div>
-                <%= yield %>
-            </div>
+    <title>Meu Pet</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Meu Pet</a>
         </div>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><a href="#">Bem vindo <%= current_user.name %></a></li>
+            <li>
+              <%= link_to('Encerrrar Sessão', destroy_user_session_path, :method => :delete) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to('Fazer Login', new_user_session_path)  %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
 
-        <footer class="footer">
-          <div class="container">
-            <p class='text-muted'>&copy; Company 2014</p>
-          </div>
-        </footer>
-    </body>
+    <div class="container">
+      <div>
+        <%= yield %>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <p class='text-muted'>&copy; Company 2014</p>
+      </div>
+    </footer>
+  </body>
 </html>
