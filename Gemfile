@@ -53,7 +53,7 @@ end
 
 group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
-  gem 'spring'
+  # gem 'spring'
   gem 'awesome_print'
   gem 'rubocop', require: false
 
