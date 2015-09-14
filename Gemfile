@@ -33,7 +33,7 @@ gem 'enumerize'
 gem 'dalli'
 gem 'nokogiri'
 
-gem 'devise', '~> 3.4'
+gem 'devise', '~> 3.5.1'
 gem 'cancan'
 
 gem 'travis', '~> 1.7.6'
