@@ -6,8 +6,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'meu_pet#index'
 
+  resources :pets
+  resources :users
+
   scope :api do
-    resources :reviews, defaults: { format: :json }
+    resources :pets, defaults: { format: :json }
+    resources :users, defaults: { format: :json }
   end
 
 
