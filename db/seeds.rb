@@ -34,3 +34,24 @@ address =  if user.addresses.empty?
             else
               user.addresses.first
             end
+
+pets = if user.my_pets.empty?
+          Pet.create(owner_id: user, address: address, category: Category.find_by_name('Cachorro'), name: 'Toto', description: 'bastante docil com criancas.', birth_date: Date.new)
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+          # Pet.create()
+      else
+        user.my_pets
+      end

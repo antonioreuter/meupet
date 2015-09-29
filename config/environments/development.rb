@@ -1,4 +1,6 @@
 Rails.application.configure do
+  ActiveRecord::Base.logger = ActiveSupport::Logger.new(STDOUT)
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -8,6 +10,8 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
+
+  config.log_level = :debug
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
