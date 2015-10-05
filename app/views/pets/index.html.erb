@@ -1,0 +1,14 @@
+<div class='row'>
+<% @pets.each do |pet| %>
+  <div class="col-sm-6 col-md-4">
+    <div class='thumbnail'>
+      <img src="..." alt="...">
+      <div class='caption'>
+        <h3><%= pet.name %></h3>
+        <p><%= pet.description %></p>
+        <p><a href="#" class="btn btn-primary" role="button">Compartilhar</a> <a href="#" class="btn btn-default" role="button">Comentar</a> <a href="#" class="btn btn-default" role="button">Adotar</a></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>

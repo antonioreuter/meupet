@@ -10,27 +10,41 @@
 #First Load
 
 if Category.first.nil?
-  Category.create(name: 'Cachorro', description: 'Cachorro de estimação')
-  Category.create(name: 'Gato', description: 'Gato de estimação')
-  Category.create(name: 'Passarinho', description: 'Passarinho de estimação')
+  Category.create!(name: 'Cachorro', description: 'Cachorro de estimação')
+  Category.create!(name: 'Gato', description: 'Gato de estimação')
+  Category.create!(name: 'Passarinho', description: 'Passarinho de estimação')
 end
 
 
-country = if Country.first.nil?
-            Country.create(country: 'Brazil', mnemonic: 'BR')
-          else
-            Country.first
-          end
+if Country.first.nil?
+  Country.create!(country: 'Brazil', mnemonic: 'BR')
+end
+country = Country.first
 
-user =  if User.first.nil?
-          User.create(name: 'Antonio Reuter', document: '36832436351', email: 'antonioreuter@meupet.com', phone: '11973453300', description: 'Eu adoro animais de estimação', sex: 'M', ong: false)
-        else
-          User.first
-        end
+if User.first.nil?
+  User.create!(name: 'Antonio Reuter', document: '36832436351', email: 'antonioreuter@meupet.com', phone: '11973453300', description: 'Eu adoro animais de estimação', sex: 'M', ong: false, password: '12345678')
+end
+
+user = User.first
 
 
-address =  if user.addresses.empty?
-              user.addresses.create(country: country, address: 'Av. Onze de Junho', number: '875', complement: 'apt 81', city: 'São Paulo', state: 'São Paulo', zipcode: '04041-053', latitude: '-1', longitude: '-1')
-            else
-              user.addresses.first
-            end
+if user.addresses.empty?
+  user.addresses.create!(country: country, address: 'Av. Onze de Junho', number: '875', complement: 'apt 81', city: 'São Paulo', state: 'São Paulo', zipcode: '04041-053', latitude: '-1', longitude: '-1')
+end
+address = user.addresses.first
+
+if user.my_pets.empty?
+  category_dog = Category.find_by_name('Cachorro')
+  category_cat = Category.find_by_name('Gato')
+  category_bird = Category.find_by_name('Passarinho')
+
+  Pet.create!(owner: user, address: address, category: category_dog, name: 'Toto', description: 'bastante docil com criancas.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_dog, name: 'Hulk', description: 'agitado e bastante brincalhao.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_dog, name: 'Thor', description: 'companheiro e muito valente.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_cat, name: 'Miau', description: 'dengoso e muito carinhoso.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_cat, name: 'Chocolate', description: 'independente e muito curioso.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_cat, name: 'Mingau', description: 'carente, precisa de uma família atenciosa.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_bird, name: 'Piu Piu', description: 'extremamente iterativo, adora cantar.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_bird, name: 'Louro', description: 'gosta de uma boa conversa, adora crianças.', birth_date: Date.new)
+  Pet.create!(owner: user, address: address, category: category_bird, name: 'Fifi', description: 'colorido e muito extrovertido.', birth_date: Date.new)
+end
